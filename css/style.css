@@ -1,0 +1,173 @@
+*{
+    margin:0;pading:0;
+    box-sizing: border-box;
+}
+/***********容器**********/
+body{
+    background-image:url(../img/bj.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.view{
+    position: relative;
+    width:270px;
+    height:270px;
+    margin:100px auto 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    perspective-origin: 0px 0px;
+}
+/********魔方每个面**********/
+.bar>div{
+    position: absolute;
+    width:274px;
+    height:274px;
+    border:2px solid #000000;
+    background:rgba(255,200,100,0.5);
+    text-align:center;
+    font-size:160px;
+}
+/******魔方内小方格************/
+.bar>div>div{
+    float:left;
+    width:90px;
+    height:90px;
+    border:1px solid #000;
+    border-radius:15px;
+}
+
+.front>div{
+    background: rgba(0,0,0,0.8);
+
+}
+.under>div{
+    background: rgba(242, 65, 240, 0.5);
+}
+.up>div{
+    background: rgba(22, 255, 70, 0.5);
+}
+.left>div{
+    background: rgba(17, 31, 180, 0.8);
+}
+.right>div{
+    background: rgba(253, 30, 7, 0.8);
+}
+.back>div{
+    background: rgba(45, 180, 49, 0.8);
+}
+
+/********end********/
+/*魔方各面，角度设置*/
+.front{
+    -webkit-transform: translatez(135px);
+    -moz-transform: translatez(135px);
+    -ms-transform: translatez(135px);
+    transform: translatez(135px);
+}
+.under{
+    -webkit-transform: rotatex(-90deg) translatez(135px);
+    -moz-transform: rotatex(-90deg) translatez(135px);
+    -ms-transform: rotatex(-90deg) translatez(135px);
+    transform: rotatex(-90deg) translatez(135px);
+}
+.up{
+    -webkit-transform: rotatex(90deg) translatez(135px);
+    -moz-transform: rotatex(90deg) translatez(135px);
+    -ms-transform: rotatex(90deg) translatez(135px);
+    transform: rotatex(90deg) translatez(135px);
+}
+.left{
+    -webkit-transform: rotatey(-90deg) translatez(135px);
+    -moz-transform: rotatey(-90deg) translatez(135px);
+    -ms-transform: rotatey(-90deg) translatez(135px);
+    transform: rotatey(-90deg) translatez(135px);
+}
+.right{
+    -webkit-transform: rotatey(90deg) translatez(135px);
+    -moz-transform: rotatey(90deg) translatez(135px);
+    -ms-transform: rotatey(90deg) translatez(135px);
+    transform: rotatey(90deg) translatez(135px);
+}
+.back{
+    -webkit-transform:rotatex(180deg) rotatez(180deg) translatez(135px);
+    -moz-transform:rotatex(180deg) rotatez(180deg) translatez(135px);
+    -ms-transform:rotatex(180deg) rotatez(180deg) translatez(135px);
+    transform:rotatex(180deg) rotatez(180deg) translatez(135px);
+}
+/******动画*部分********/
+.bar{
+    -webkit-animation: my 5s ease-in-out infinite;
+    -moz-animation: my 5s ease-in-out infinite;
+    -ms-animation: my 5s ease-in-out infinite;
+    animation: my 5s ease-in-out infinite;
+
+    -webkit-transform-style:preserve-3d ;
+    -moz-transform-style:preserve-3d ;
+    -ms-transform-style:preserve-3d ;
+
+    -webkit-transform-origin:135px 135px 0 ;
+    -moz-transform-origin:135px 135px 0 ;
+    -ms-transform-origin:135px 135px 0 ;
+    transform-origin: 135px 135px 0;
+}
+@-webkit-keyframes my{
+    0%{ -webkit-transform:translatez(0px)
+            rotatex(0deg)
+            rotatey(0deg);
+        }
+    50%{
+        -webkit-transform:translatez(-80px)
+        rotatex(360deg) rotatey(360deg);
+    }
+    100%{
+        -webkit-transform:translatez(0px)
+        rotatex(0deg) rotatey(0deg);
+    }
+}
+@-moz-keyframes my{
+    0%{ -moz-transform:translatez(0px)
+                    rotatex(0deg)
+                    rotatey(0deg);
+      }
+    50%{
+        -moz-transform:translatez(-80px)
+        rotatex(360deg) rotatey(360deg);
+    }
+    100%{
+        -moz-transform:translatez(0px)
+        rotatex(0deg) rotatey(0deg);
+    }
+}
+@-ms-keyframes my{
+    0%{ -ms-transform:translatez(0px)
+            rotatex(0deg)
+            rotatey(0deg);
+    }
+    50%{
+        -ms-transform:translatez(-80px)
+        rotatex(360deg) rotatey(360deg);
+    }
+    100%{
+        -ms-transform:translatez(0px)
+        rotatex(0deg) rotatey(0deg);
+    }
+}
+@keyframes my{
+    0%{ transform:translatez(0px)
+            rotatex(0deg)
+            rotatey(0deg);
+        }
+    50%{
+        transform:translatez(-80px)
+        rotatex(360deg) rotatey(360deg);
+    }
+    100%{
+        transform:translatez(0px)
+        rotatex(0deg) rotatey(0deg);
+    }
+}
+
+
